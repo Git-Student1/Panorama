@@ -22,16 +22,9 @@ t0 = time.time()
 
 for image_path in imgaes_path:
     index+=1
-    
-    img = Image.open(image_path)
-    pix = img.load()
-    
-    line = []
-    for y in range(image_height):
-        line.append(pix[y, image_width_center])
-    new_image_pix.append(line)
-    #img = cv2.imread(image_path)
-    #new_image_pix.append( img[image_width_center, :])
+
+    img = cv2.imread(image_path)
+    new_image_pix.append( img[image_width_center, :])
 
     if index == max_index:
         break
