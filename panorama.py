@@ -28,8 +28,13 @@ def create_panorama_image():
     index = 0
     for image_path in tqdm(imgaes_path):
         index+=1
-        img = cv2.imread(image_path)
-        new_image_pix.append( img[image_width_center, :])
+        img = Image.open(image_path)
+        pix = img.load()
+        
+        line = []
+        for y in range(image_height):
+            line.append(pix[y, image_width_center])
+        new_image_pix.append(line)
         if index == max_index:
             return new_image_pix        
 
