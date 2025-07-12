@@ -8,10 +8,11 @@ import numpy as np
 from PIL import ImageDraw 
 from PIL import ImageFont
 from tqdm import tqdm
+from dotenv import load_dotenv
+# loading variables from .env file
+load_dotenv() 
 
-
-
-image_paths = list(Path(os.getenv("path_to_image_folder")).glob("*.jpg")) # list is important as it retures a generator, once consumed you cannot get/access the image paths again
+image_paths = list(Path(os.getenv("PATH_TO_IMAGE_FOLDER")).glob("*.jpg")) # list is important as it retures a generator, once consumed you cannot get/access the image paths again
 index =0
 max_index = 1000
 
