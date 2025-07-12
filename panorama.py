@@ -61,6 +61,8 @@ def create_panorama_image_stereo():
     sensor_width = 14.9 # in mm, length of the camera sensor in width direction
     s= focal_length* math.tan(math.asin(stereo_basis/radius_of_camera_rotation)) # in mm
     s_column = round(s*(image_width//sensor_width))
+    print(s)
+    print(s_column)
     pbar = tqdm(total=count_images, desc="Creating panorama image")
     while index < count_images:
         pbar.update(1)
@@ -95,7 +97,7 @@ def save_image(pixels_array, time_for_panorama_creation):
     panorama_image.show()
 
 t0 = time.time()
-pixels_array = create_panorama_image_aproximated(99)
+pixels_array = create_panorama_image_stereo()
 t1 = time.time()
 time_for_panorama_creation = t1-t0
 save_image(pixels_array, time_for_panorama_creation)
