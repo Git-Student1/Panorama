@@ -15,3 +15,6 @@ To properly use this code, you need a corresponding amount of  images (I_req)  t
 The requirements are very hard to meet, so this is a very niche panorama creation program. 
 
 The Images must be taken by a camera that is rotating automatically on an arm. It might take many hours to produce a full 360° panorama and the area must be completely undistured and unchanged during this process to get a good panorama. 
+
+
+Also, add a .env file with the property path_to_image_folder and give it a value. 

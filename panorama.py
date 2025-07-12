@@ -1,4 +1,5 @@
 import math
+import os
 import time
 from PIL import Image
 from  PIL.Image import Transpose
@@ -9,7 +10,8 @@ from PIL import ImageFont
 from tqdm import tqdm
 
 
-image_paths = list(Path("C:/Users/Maxim/Downloads/_PanoJPEG/_PanoJPEG").glob("*.jpg")) # list is important as it retures a generator, once consumed you cannot get/access the image paths again
+
+image_paths = list(Path(os.getenv("path_to_image_folder")).glob("*.jpg")) # list is important as it retures a generator, once consumed you cannot get/access the image paths again
 index =0
 max_index = 1000
 
